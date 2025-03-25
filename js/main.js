@@ -150,3 +150,30 @@ document.addEventListener("DOMContentLoaded", function () {
 	  observer.observe(bar);
 	});
   });
+
+
+document.addEventListener('DOMContentLoaded', function() {
+  // Get modal elements
+  const modal = document.getElementById('certificateModal');
+  const modalImg = document.getElementById('modalImage');
+  const closeBtn = document.querySelector('.modal-close');
+
+  // Get all "View Certificate" buttons
+  const viewButtons = document.querySelectorAll('.view-btn');
+
+  // Attach click event to each button
+  viewButtons.forEach(button => {
+    button.addEventListener('click', function(e) {
+      e.preventDefault(); // Prevent default link behavior
+      const imgSrc = this.closest('.certificate-content').querySelector('img').src;
+      modal.style.display = 'block';
+      modalImg.src = imgSrc;
+    });
+  });
+
+  // Close modal when clicking (X) or outside the image
+  closeBtn.addEventListener('click', () => modal.style.display = 'none');
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) modal.style.display = 'none';
+  });
+});

@@ -462,60 +462,69 @@
 
 
   <section id="Certifications" class="about-mf sect-pt4 route">
-    <div class="row">
-      <div class="col-md-12 text-center">
-        <div class="title-box-2">
-          <h2 class="title-left">
-           CERTIFICATIONS
-          </h2>
-        </div>
-      </div>
-    </div>
-  <div class="certifications-grid">
-    <div class="certificate-card card-1">
-        <div class="certificate-content">
-            <img src="https://i.ibb.co/s9p32c4C/Screenshot-2025-03-26-012554.png" alt="Certificate 1">
-            <div class="overlay">
-                <button class="view-btn">View Certificate</button>
-            </div>
-        </div>
-        <h3>Infosys Springboard </h3>
-        <p>Essentials of Clouud Computing (2023)</p>
-    </div>
-    
-    <div class="certificate-card card-2">
-        <div class="certificate-content">
-            <img src="https://i.ibb.co/tpFcXJwf/693759316.jpg" alt="Certificate 2">
-            <div class="overlay">
-                <button class="view-btn">View Certificate</button>
-            </div>
-        </div>
-        <h3>Verzeo</h3>
-        <p>Digital Marketing (2022)</p>
-    </div>
-
-    <div class="certificate-card card-2">
-      <div class="certificate-content">
-          <img src="    https://i.ibb.co/9QtdPj4/Whats-App-Image-2024-02-20-at-17-50-11-83a23df5.jpg" alt="Certificate 2">
-          <div class="overlay">
-              <button class="view-btn">View Certificate</button>
+    <div class="container"> <!-- Added container to constrain width -->
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <div class="title-box-2">
+            <h2 class="title-left">
+              CERTIFICATIONS
+            </h2>
           </div>
-      </div>
-      <h3>Microsoft</h3>
-      <p>Azure AI Fundamentals(2022)</p>
-  </div>
-
-  <div class="certificate-card card-2">
-    <div class="certificate-content">
-        <img src=" https://i.ibb.co/m5CBxhWR/Whats-App-Image-2024-02-20-at-17-50-11-9ef3f995.jpg" alt="Certificate 2">
-        <div class="overlay">
-            <button class="view-btn">View Certificate</button>
         </div>
+      </div>
+      <div class="certifications-grid">
+        <!-- Your certificate cards here (same as before) -->
+        <div class="certificate-card card-1">
+          <div class="certificate-content">
+              <img src="https://i.ibb.co/s9p32c4C/Screenshot-2025-03-26-012554.png" alt="Certificate 1">
+              <div class="overlay">
+                <a href="#" class="view-btn">View Certificate</a>
+              </div>
+          </div>
+          <h3>Infosys Springboard </h3>
+          <p>Essentials of Clouud Computing (2023)</p>
+        </div>
+        
+        <div class="certificate-card card-2">
+          <div class="certificate-content">
+              <img src="https://i.ibb.co/tpFcXJwf/693759316.jpg" alt="Certificate 2">
+              <div class="overlay">
+                <a href="#" class="view-btn">View Certificate</a>
+              </div>
+          </div>
+          <h3>Verzeo</h3>
+          <p>Digital Marketing (2022)</p>
+        </div>
+  
+        <div class="certificate-card card-2">
+          <div class="certificate-content">
+              <img src="https://i.ibb.co/9QtdPj4/Whats-App-Image-2024-02-20-at-17-50-11-83a23df5.jpg" alt="Certificate 2">
+              <div class="overlay">
+                <a href="#" class="view-btn">View Certificate</a>
+              </div>
+          </div>
+          <h3>Microsoft</h3>
+          <p>Azure AI Fundamentals(2022)</p>
+        </div>
+  
+        <div class="certificate-card card-2">
+          <div class="certificate-content">
+              <img src="https://i.ibb.co/m5CBxhWR/Whats-App-Image-2024-02-20-at-17-50-11-9ef3f995.jpg" alt="Certificate 2">
+              <div class="overlay">
+                <a href="#" class="view-btn">View Certificate</a>
+              </div>
+          </div>
+          <h3>HTML5 Application Development</h3>
+          <p>Microsoft (2022)</p>
+        </div>
+      </div>
     </div>
-    <h3>HTML5 Application Development</h3>
-    <p>Microsoft (2022)</p>
-</div>
-</section>
+    <!-- Modal Overlay (hidden by default) -->
+    <div id="certificateModal" class="modal">
+      <span class="modal-close">&times;</span>
+      <img class="modal-image" id="modalImage">
+    </div>
+  </section>
 
 </div>
   <!--/ Section Services Star /-->
@@ -1249,7 +1258,7 @@
     <!-- Learn More Button -->
     <div class="row">
       <div class="col-12 text-center mt-4">
-        <button id="load-more" class="btn btn-primary">Learn More</button>
+        <button id="load-more" class="btn btn-primary">See all</button>
       </div>
     </div>
   </div>

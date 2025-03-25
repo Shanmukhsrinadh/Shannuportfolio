@@ -1019,4 +1019,69 @@ a:hover {
   .certifications-grid {
       grid-template-columns: 1fr;
   }
+}/* Modal Styles */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 1000; /* High z-index to appear on top */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9); /* Semi-transparent black */
+  cursor: pointer; /* Click anywhere to close */
+}
+
+.modal-image {
+  display: block;
+  max-width: 90%;
+  max-height: 90%;
+  margin: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.modal-close {
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.modal-close:hover {
+  color: #ccc;
+}
+/* .container {
+  max-width: 100%;
+  overflow-x: hidden;
+  padding: 0 15px;
+} */
+
+.certifications-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.certificate-card {
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.certificate-content img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+body {
+  overflow-x: hidden;
 }
