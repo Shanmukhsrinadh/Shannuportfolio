@@ -1056,11 +1056,11 @@ a:hover {
 .modal-close:hover {
   color: #ccc;
 }
-/* .container {
+.container {
   max-width: 100%;
   overflow-x: hidden;
   padding: 0 15px;
-} */
+}
 
 .certifications-grid {
   display: grid;
