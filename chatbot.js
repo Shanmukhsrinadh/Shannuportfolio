@@ -72,6 +72,8 @@ function processInput() {
             addMessage('bot', 'Sure! Taking you to the home page now – just click <a href="https://shanmukhsrinadh.github.io/Portfolio/#home">Home</a>.');
         } else if (input.match(/\b(about him|about shannu|about)\b/i)) {
             addMessage('bot', 'You can learn all about Shanmukh in the <a href="https://shanmukhsrinadh.github.io/Portfolio-1/#about">About section</a>. Let me know if you have more questions!');
+        } else if (input.match(/\b(Certifications|certifications)\b/i)) {
+            addMessage('bot', 'Sure! Taking you to the home page now – just click <a href="https://shanmukhsrinadh.github.io/Shannuportfolio/#Certifications">Certifications</a>.');
         } else if (input.match(/\b(resume|his resume|his cv|CV)\b/i)) {
             addMessage('bot', 'You can view Shanmukh\'s resume in the <a href="https://drive.google.com/file/d/110rRY1vMHlaQ1OtlgQ3SDiiZzoQLUj6a/view">Resume section</a>.');
         } else if (input.match(/\b(skills|what does he know)\b/i)) {
