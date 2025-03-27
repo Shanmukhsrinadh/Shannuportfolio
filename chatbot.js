@@ -1,9 +1,10 @@
-
+// Toggle chatbot visibility
 function toggleChatbot() {
     const chatbotContainer = document.getElementById('chatbot-container');
     chatbotContainer.style.display = chatbotContainer.style.display === "none" ? "flex" : "none";
 }
 
+// Show typing indicator
 function showTyping() {
     const messages = document.getElementById('chatbot-messages');
     const typingIndicator = document.createElement('div');
@@ -17,7 +18,7 @@ function showTyping() {
     return typingIndicator;
 }
 
-
+// Add message to chat
 function addMessage(sender, text) {
     const messages = document.getElementById('chatbot-messages');
     const message = document.createElement('div');
@@ -30,15 +31,22 @@ function addMessage(sender, text) {
     messages.scrollTop = messages.scrollHeight;
 }
 
+// Smooth scroll to section
+function scrollToSection(sectionId) {
+    const section = document.querySelector(sectionId);
+    if (section) {
+        section.scrollIntoView({ behavior: 'smooth' });
+    }
+}
+
+// Process user input
 function processInput() {
     const input = document.getElementById('userInput').value.trim();
-    document.getElementById('userInput').value = ''; 
+    document.getElementById('userInput').value = '';
 
     if (input === "") return;
 
     addMessage('user', input);
-
- 
     const typingIndicator = showTyping();
 
     setTimeout(() => {
@@ -46,47 +54,71 @@ function processInput() {
 
         if (input.match(/\b(hi|hello|hey|greetings)\b/i)) {
             const greetings = [
-                "Hello there! 😊 How’s your day going so far?",
-                "Hey! I’m here and ready to chat. What’s up?",
-                "Hi! Great to see you here! Anything interesting on your mind?",
-                "Hey there! How can I brighten up your day today?"
+                "Hello there! 😊 How can I help you today?",
+                "Hey! I'm your portfolio assistant. What would you like to know?",
+                "Hi! Ready to explore the portfolio?",
+                "Hey there! Ask me about any section of the portfolio."
             ];
             addMessage('bot', greetings[Math.floor(Math.random() * greetings.length)]);
-        } else if (input.match(/\b(portfolio|project|website|services)\b/i)) {
+        } 
+        else if (input.match(/\b(portfolio|project|website)\b/i)) {
             const portfolioResponses = [
-                "Sure! I'd love to help with portfolio questions. What specifically would you like to know?",
-                "I can definitely guide you on portfolio-related topics. Feel free to ask!",
-                "Anything about the portfolio, project details, or sections – I'm here for it!",
-                "Portfolio guidance? You’ve come to the right chatbot! 😊"
+                "I can guide you to any section of the portfolio. Try asking about: Home, About, Services, Certifications, Work, or Contact.",
+                "This portfolio contains several sections. Would you like to see: Home, About, Services, or Projects?",
+                "You can ask me to take you to any section of the portfolio."
             ];
             addMessage('bot', portfolioResponses[Math.floor(Math.random() * portfolioResponses.length)]);
-        } else if (input.match(/\b(goodbye|bye|see you later)\b/i)) {
+        } 
+        else if (input.match(/\b(services|service|what do you offer|offerings)\b/i)) {
+            addMessage('bot', 'Taking you to the Services section...');
+            setTimeout(() => scrollToSection('#service'), 500);
+        }
+        else if (input.match(/\b(goodbye|bye|see you later)\b/i)) {
             const goodbyes = [
-                "Goodbye for now! Chat again soon! 😊",
-                "See you later! And remember, I’m just a message away.",
-                "Bye! Come back anytime you need a friend to chat with.",
-                "See you around! Take care until next time!"
+                "Goodbye! Come back anytime.",
+                "See you later!",
+                "Bye! Feel free to chat again.",
+                "Take care! I'm here whenever you need me."
             ];
             addMessage('bot', goodbyes[Math.floor(Math.random() * goodbyes.length)]);
-        } else if (input.match(/\b(home|main)\b/i)) {
-            addMessage('bot', 'Sure! Taking you to the home page now – just click <a href="https://shanmukhsrinadh.github.io/Portfolio/#home">Home</a>.');
-        } else if (input.match(/\b(about him|about shannu|about)\b/i)) {
-            addMessage('bot', 'You can learn all about Shanmukh in the <a href="https://shanmukhsrinadh.github.io/Portfolio-1/#about">About section</a>. Let me know if you have more questions!');
-        } else if (input.match(/\b(Certifications|certifications)\b/i)) {
-            addMessage('bot', 'Sure! Taking you to the home page now – just click <a href="https://shanmukhsrinadh.github.io/Shannuportfolio/#Certifications">Certifications</a>.');
-        } else if (input.match(/\b(resume|his resume|his cv|CV)\b/i)) {
-            addMessage('bot', 'You can view Shanmukh\'s resume in the <a href="https://drive.google.com/file/d/110rRY1vMHlaQ1OtlgQ3SDiiZzoQLUj6a/view">Resume section</a>.');
-        } else if (input.match(/\b(skills|what does he know)\b/i)) {
-            addMessage('bot', 'Check out the <a href="https://shanmukhsrinadh.github.io/Portfolio-1/#about">Skills section</a> to see what Shanmukh knows!');
-        } else if (input.match(/\b(projects|works|work|project)\b/i)) {
-            addMessage('bot', 'Check out the <a href="https://shanmukhsrinadh.github.io/Portfolio-1/#work">Projects section</a> to see Shanmukh\'s amazing work.');
-        } else {
-            addMessage('bot', "My AI knowledge is focused on the portfolio. Please phrase your questions or ask me something else related to the portfolio; I'll be happy to guide you through.");
+        } 
+        else if (input.match(/\b(home|main)\b/i)) {
+            addMessage('bot', 'Taking you to the Home section...');
+            setTimeout(() => scrollToSection('#home'), 500);
+        } 
+        else if (input.match(/\b(about him|about shannu|about|skills|what does he know)\b/i)) {
+            if (input.match(/\b(skills|what does he know)\b/i)) {
+                addMessage('bot', 'Showing skills in the About section...');
+            } else {
+                addMessage('bot', 'Taking you to the About section...');
+            }
+            setTimeout(() => scrollToSection('#about'), 500);
+        } 
+        else if (input.match(/\b(Certifications|certifications|certificate)\b/i)) {
+            addMessage('bot', 'Showing Certifications...');
+            setTimeout(() => scrollToSection('#Certifications'), 500);
+        } 
+        else if (input.match(/\b(resume|his resume|his cv|CV)\b/i)) {
+            addMessage('bot', 'Opening resume in a new tab...');
+            setTimeout(() => {
+                window.open('https://drive.google.com/file/d/110rRY1vMHlaQ1OtlgQ3SDiiZzoQLUj6a/view', '_blank');
+            }, 500);
+        } 
+        else if (input.match(/\b(projects|works|work|project)\b/i)) {
+            addMessage('bot', 'Showing Projects...');
+            setTimeout(() => scrollToSection('#work'), 500);
+        } 
+        else if (input.match(/\b(contact|reach out|get in touch)\b/i)) {
+            addMessage('bot', 'Taking you to the Contact section...');
+            setTimeout(() => scrollToSection('#main-footer'), 500);
         }
-    }, 1000); 
+        else {
+            addMessage('bot', "I can help you navigate the portfolio. Try asking about: Home, About, Services, Certifications, Projects, or Contact.");
+        }
+    }, 1000);
 }
 
-
+// Check for Enter key press
 function checkEnter(event) {
     if (event.key === "Enter") {
         processInput();
