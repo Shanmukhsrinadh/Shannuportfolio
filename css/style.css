@@ -1062,26 +1062,48 @@ a:hover {
   padding: 0 15px;
 }
 
-.certifications-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-  width: 100%;
-  overflow: hidden;
-}
-
-.certificate-card {
-  width: 100%;
-  max-width: 100%;
-  overflow: hidden;
-}
-
-.certificate-content img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
+  .certificate-card {
+    border: 1px solid #5a5454;
+    border-radius: 8px;
+    padding: 15px;
+    transition: all 0.3s ease;
+    height: 100%;
+  }
+  
+  .certificate-card:hover {
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  }
+  
+  .certificate-content {
+    overflow: hidden;
+    border-radius: 5px;
+  }
+  
+  .certificate-content img {
+    transition: transform 0.3s ease;
+    width: 100%;
+  }
+  
+  .certificate-card:hover img {
+    transform: scale(1.05);
+  }
+  
+  .overlay {
+    background: rgba(0,0,0,0.5);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .certificate-card:hover .overlay {
+    opacity: 1;
+  }
+  
+  .view-btn {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+  }
 body {
   overflow-x: hidden;
 }
