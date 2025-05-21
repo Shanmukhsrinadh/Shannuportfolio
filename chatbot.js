@@ -101,7 +101,7 @@ function processInput() {
         else if (input.match(/\b(resume|his resume|his cv|CV)\b/i)) {
             addMessage('bot', 'Opening resume in a new tab...');
             setTimeout(() => {
-                window.open('https://drive.google.com/file/d/110rRY1vMHlaQ1OtlgQ3SDiiZzoQLUj6a/view', '_blank');
+                window.open('https://drive.google.com/file/d/1O2RMBs067JUDwoZluQ8nvVhuHTfK4ndW/view?usp=sharing', '_blank');
             }, 500);
         } 
         else if (input.match(/\b(projects|works|work|project)\b/i)) {
