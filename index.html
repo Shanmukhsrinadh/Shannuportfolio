@@ -263,7 +263,7 @@
           </li>
           <li class="nav-item">
             <a class="nav-link js-scroll"
-              href="https://drive.google.com/file/d/1O2RMBs067JUDwoZluQ8nvVhuHTfK4ndW/view?usp=sharing"
+              href="https://drive.google.com/file/d/1QT1MQjPJK7pzxHusaM2NYgJe8AuMjo12/view?usp=sharing"
               download>Download Resume</a>
           </li>
         </ul>
@@ -562,7 +562,26 @@
           <h3>InAmigos Foundation</h3>
           <p>Graphic design certificate (2025)</p>
         </div>
-
+        <div class="certificate-card card-2">
+          <div class="certificate-content">
+            <img src="img/Techmahindracert.png" alt="Certificate 4">
+            <div class="overlay">
+              <a href="#" class="view-btn">View Certificate</a>
+            </div>
+          </div>
+          <h3>Tech Mahindra Foundation</h3>
+          <p>UI/UX Developer (2025)</p>
+        </div>
+        <div class="certificate-card card-2">
+          <div class="certificate-content">
+            <img src="img/DrReddysFoundationcert.jpg" alt="Certificate 4">
+            <div class="overlay">
+              <a href="#" class="view-btn">View Certificate</a>
+            </div>
+          </div>
+          <h3>Dr Reddy's Foundation</h3>
+          <p>Instruction Designer (2025)</p>
+        </div>
       </div>
     </div>
     <!-- Modal Overlay (hidden by default) -->
@@ -1823,52 +1842,65 @@
         <div class="box-shadow-full" style="background-color: rgba(0, 0, 0, 0.473);">
           <div class="row">
             <div class="col-md-6">
-              <div class="title-box-2" style="background-color: rgba(0, 0, 0, 0);">
-                <h5 class="title-left">
-                  Write a message
-                </h5>
+              <div class="title-box-2" style="background-color: rgba(0,0,0,0);">
+                <h5 class="title-left">Write a message</h5>
               </div>
-              <div style="background-color: rgba(0, 0, 0, 0.384);">
-                <form action="sendmail.php" method="post" role="form" class="contactForm"
-                  style="background-color: transparent;">
-                  <div id="sendmessage">Your message has been sent. Thank you!</div>
-                  <div id="errormessage"></div>
-                  <div class="row">
-                    <div class="col-md-12 mb-3">
-                      <div class="form-group">
-                        <input type="text" name="name" class="form-control" id="name" placeholder="Your Name"
-                          data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
-                        <div class="validation"></div>
-                      </div>
-                    </div>
-                    <div class="col-md-12 mb-3">
-                      <div class="form-group">
-                        <input type="email" class="form-control" name="email" id="email" placeholder="Your Email"
-                          data-rule="email" data-msg="Please enter a valid email" />
-                        <div class="validation"></div>
-                      </div>
-                    </div>
-                    <div class="col-md-12 mb-3">
-                      <div class="form-group">
-                        <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject"
-                          data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
-                        <div class="validation"></div>
-                      </div>
-                    </div>
-                    <div class="col-md-12 mb-3">
-                      <div class="form-group">
-                        <textarea class="form-control" name="message" rows="5" data-rule="required"
-                          data-msg="Please write something for us" placeholder="Message"></textarea>
-                        <div class="validation"></div>
-                      </div>
-                    </div>
-                    <div class="col-md-12">
-                      <button type="submit" class="button button-a button-big button-rouded">Send Message</button>
+
+              <form id="contactForm" style="background-color: transparent;">
+
+                <!-- SUCCESS MESSAGE -->
+                <div id="successMessage" style="display:none; color:#4caf50; margin-bottom:10px;">
+                  Your message has been sent. Thank you!
+                </div>
+
+                <!-- ERROR MESSAGE -->
+                <div id="errorMessage" style="display:none; color:#ff5252; margin-bottom:10px;"></div>
+
+                <div class="row">
+
+                  <!-- NAME -->
+                  <div class="col-md-12 mb-3">
+                    <div class="form-group">
+                      <input type="text" class="form-control" id="name" placeholder="Your Name">
                     </div>
                   </div>
-                </form>
-              </div>
+
+                  <!-- EMAIL -->
+                  <div class="col-md-12 mb-3">
+                    <div class="form-group">
+                      <input type="email" class="form-control" id="email" placeholder="Your Email">
+                    </div>
+                  </div>
+
+                  <!-- PHONE -->
+                  <div class="col-md-12 mb-3">
+                    <div class="form-group">
+                      <input type="text" class="form-control" id="phone" placeholder="Your Phone number">
+                    </div>
+                  </div>
+
+                  <!-- MESSAGE -->
+                  <div class="col-md-12 mb-3">
+                    <div class="form-group">
+                      <textarea class="form-control" id="message" rows="5" placeholder="Message"></textarea>
+                    </div>
+                  </div>
+
+                  <!-- SUBMIT BUTTON -->
+                  <div class="col-md-12">
+                    <button id="submitBtn" type="submit" class="button button-a button-big button-rouded">
+                      Send Message
+                    </button>
+                    <!-- LOADING -->
+                    <div id="loading" style="display:none; margin-top:10px; color:white;">
+                      Sending...
+                    </div>
+                  </div>
+
+                </div>
+              </form>
             </div>
+
             <div class="col-md-6">
               <div class="title-box-2 pt-4 pt-md-0" style="background-color: rgba(0, 0, 0, 0);">
                 <h5 class="title-left">
@@ -1884,7 +1916,7 @@
                 <ul class="list-ico">
                   <li><span class="ion-ios-location"></span> Visakhapatnam,Andhra pradesh,India</li>
                   <li><span class="ion-ios-telephone"></span> (+91) 9550563283</li>
-                  <li><span class="ion-email"></span> shimachalamshanmuk60297@gmail.com</li>
+                  <li><span class="ion-email"></span> shanmukhsrinadh01@gmail.com</li>
                 </ul>
               </div>
               <div class="socials" style="background-color: rgba(0, 0, 0, 0);">
@@ -1959,27 +1991,6 @@
         top: document.body.scrollHeight,
         behavior: 'smooth'
       });
-    });
-
-    // Form submission handler
-    document.querySelector('.contactForm').addEventListener('submit', function (e) {
-      e.preventDefault();
-
-      const formData = new FormData(this);
-
-      fetch('sendmail.php', {
-        method: 'POST',
-        body: formData
-      })
-        .then(response => response.text())
-        .then(data => {
-          if (data === 'success') {
-            alert('Message sent successfully!');
-          } else {
-            alert('Failed to send message.');
-          }
-        })
-        .catch(error => console.error('Error:', error));
     });
   </script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -2105,7 +2116,6 @@
         }
         showingAll = !showingAll;
       });
-
       // Add click handler for view certificate buttons
       document.querySelectorAll('.view-certificate').forEach(button => {
         button.addEventListener('click', function (e) {
@@ -2117,5 +2127,7 @@
       });
     });
   </script>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script src="contact.js"></script>
 
 </html>
